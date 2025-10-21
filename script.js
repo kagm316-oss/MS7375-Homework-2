@@ -10,11 +10,29 @@ let formData = {};
 
 // Initialize form when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    displayCurrentDate();
     initializeForm();
     setDateRanges();
     setupPainLevelSlider();
     setupPasswordValidation();
 });
+
+/**
+ * Display current date in the banner
+ */
+function displayCurrentDate() {
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        dateElement.textContent = formattedDate;
+    }
+}
 
 /**
  * Initialize form event listeners
@@ -30,6 +48,12 @@ function initializeForm() {
     // Setup button event listeners
     document.getElementById('review-btn').addEventListener('click', reviewForm);
     document.getElementById('patient-form').addEventListener('submit', submitForm);
+    
+    // Setup close review button
+    const closeReviewBtn = document.getElementById('close-review-btn');
+    if (closeReviewBtn) {
+        closeReviewBtn.addEventListener('click', closeReviewSection);
+    }
 }
 
 /**
@@ -539,4 +563,14 @@ function submitForm(event) {
     
     alert('Form submitted successfully!');
     // Here you would normally send the data to a server
+}
+
+/**
+ * Close the review section
+ */
+function closeReviewSection() {
+    const reviewSection = document.getElementById('review-section');
+    if (reviewSection) {
+        reviewSection.style.display = 'none';
+    }
 }

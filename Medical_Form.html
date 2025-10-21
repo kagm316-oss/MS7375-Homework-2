@@ -25,17 +25,7 @@
             <td class="banner-text">
                 <h1>Elite Orthopedic</h1>
                 <p>
-                    Today is: 
-                    <script>
-                        document.write(
-                            new Date().toLocaleDateString('en-US', { 
-                                weekday: 'long', 
-                                year: 'numeric', 
-                                month: 'long', 
-                                day: 'numeric' 
-                            })
-                        );
-                    </script>
+                    Today is: <span id="current-date"></span>
                 </p>
             </td>
         </tr>
@@ -291,7 +281,7 @@
     <div id="review-section" class="review-section" style="display: none;">
         <div id="review-content"></div>
         <div class="review-buttons">
-            <button type="button" onclick="document.getElementById('review-section').style.display='none';" class="close-review-btn">Close Review</button>
+            <button type="button" id="close-review-btn" class="close-review-btn">Close Review</button>
         </div>
     </div>
 
