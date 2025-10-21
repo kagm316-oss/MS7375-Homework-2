@@ -45,9 +45,9 @@
     <form id="patient-form">
         <h2>Patient Registration Form</h2>
         
-        <!-- Block 1: Personal Information -->
+        <!-- Personal, Contact & Address Information -->
         <fieldset class="form-section">
-            <legend>Personal Information</legend>
+            <legend>Personal, Contact & Address Information</legend>
             <table class="form-table">
                 <tr>
                     <td><label for="first-name">First Name *:</label></td>
@@ -75,14 +75,7 @@
                                maxlength="11" pattern="\d{3}-\d{2}-\d{4}"
                                title="Social Security: XXX-XX-XXXX format (will be hidden for security)"></td>
                 </tr>
-            </table>
-        </fieldset>
 
-        
-        <!-- Block 2: Contact Information -->
-        <fieldset class="form-section">
-            <legend>Contact Information</legend>
-            <table class="form-table">
                 <tr>
                     <td><label for="email-address">Email Address *:</label></td>
                     <td><input type="email" id="email-address" name="email-address" required
@@ -93,13 +86,28 @@
                                pattern="\d{3}-\d{3}-\d{4}"
                                title="Phone format: 000-000-0000"></td>
                 </tr>
-            </table>
-        </fieldset>
-        
-        <!-- Block 3: Address Information -->
-        <fieldset class="form-section">
-            <legend>Address Information</legend>
-            <table class="form-table">
+
+                <tr>
+                    <td><label for="address-line-1">Address Line 1 *:</label></td>
+                    <td><input type="text" id="address-line-1" name="address-line-1" required
+                               maxlength="30" minlength="2"
+                               title="Street address: 2-30 characters required"></td>
+                    <td><label for="address-line-2">Address Line 2:</label></td>
+                    <td><input type="text" id="address-line-2" name="address-line-2" 
+                               maxlength="30" minlength="2"
+                               title="Optional: Apartment, suite, etc. If entered, must be 2-30 characters"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="city">City *:</label></td>
+                    <td><input type="text" id="city" name="city" required 
+                               maxlength="30" minlength="2"
+                               title="City name: 2-30 characters required"></td>
+                    <td><label for="state">State *:</label></td>
+                    <td>
+                        <select id="state" name="state" required 
+                                title="Please select your state">
+                            <option value="">Select a state</option>
                 <tr>
                     <td><label for="address-line-1">Address Line 1 *:</label></td>
                     <td><input type="text" id="address-line-1" name="address-line-1" required
