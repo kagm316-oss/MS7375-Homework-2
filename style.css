@@ -201,10 +201,10 @@ input.error, select.error, textarea.error {
     background-color: #f8d7da;
 }
 
-/* Salary Slider Display */
-#salary-display {
+/* Pain Level Slider Display */
+#pain-display {
     font-weight: bold;
-    color: #28a745;
+    color: #dc3545;
     font-size: 16px;
     margin-left: 10px;
 }

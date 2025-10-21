@@ -12,7 +12,7 @@ let formData = {};
 document.addEventListener('DOMContentLoaded', function() {
     initializeForm();
     setDateRanges();
-    setupSalarySlider();
+    setupPainLevelSlider();
     setupPasswordValidation();
 });
 
@@ -51,29 +51,41 @@ function setDateRanges() {
 }
 
 /**
- * Setup salary slider with dynamic display
+ * Setup pain level slider with dynamic display
  */
-function setupSalarySlider() {
-    const salarySlider = document.getElementById('salary-range');
-    const salaryDisplay = document.getElementById('salary-display');
+function setupPainLevelSlider() {
+    const painSlider = document.getElementById('pain-level');
+    const painDisplay = document.getElementById('pain-display');
     
-    if (salarySlider && salaryDisplay) {
-        salarySlider.addEventListener('input', function() {
+    if (painSlider && painDisplay) {
+        painSlider.addEventListener('input', function() {
             const value = parseInt(this.value);
-            salaryDisplay.textContent = formatSalary(value);
+            painDisplay.textContent = formatPainLevel(value);
         });
         
         // Initialize display
-        const initialValue = parseInt(salarySlider.value);
-        salaryDisplay.textContent = formatSalary(initialValue);
+        const initialValue = parseInt(painSlider.value);
+        painDisplay.textContent = formatPainLevel(initialValue);
     }
 }
 
 /**
- * Format salary value for display
+ * Format pain level value for display
  */
-function formatSalary(value) {
-    return '$' + value.toLocaleString() + '/year';
+function formatPainLevel(value) {
+    const painDescriptions = {
+        1: '1 (No Pain)',
+        2: '2 (Minimal)',
+        3: '3 (Mild)',
+        4: '4 (Moderate)',
+        5: '5 (Moderate)',
+        6: '6 (Moderate-Severe)',
+        7: '7 (Severe)', 
+        8: '8 (Very Severe)',
+        9: '9 (Extremely Severe)',
+        10: '10 (Unbearable)'
+    };
+    return painDescriptions[value] || value.toString();
 }
 
 /**
@@ -340,7 +352,7 @@ function collectFormData() {
         currentlySick: getRadioValue('sick'),
         hasInsurance: getRadioValue('insurance'),
         vaccinated: getRadioValue('vaccinated'),
-        salaryRange: document.getElementById('salary-range').value,
+        painLevel: document.getElementById('pain-level').value,
         userId: document.getElementById('user-id').value,
         password: document.getElementById('password').value
     };
@@ -431,8 +443,8 @@ function displayReview() {
                 <td>${formData.hasInsurance}</td>
             </tr>
             <tr>
-                <td><strong>Desired Salary:</strong></td>
-                <td>${formatSalary(parseInt(formData.salaryRange))}</td>
+                <td><strong>Pain Level:</strong></td>
+                <td>${formatPainLevel(parseInt(formData.painLevel))}</td>
             </tr>
             <tr>
                 <td><strong>Symptoms:</strong></td>
