@@ -1,11 +1,11 @@
-<!--
-    Program Name: Style sheet.html
+/*
+    Program Name: Style sheet.css
     Author: Kris Patterson  
     Date Created: 09-20-2025
     Date last edited: 09-26-25
     Version: 1.0
     Description: Basic User Entry Form
--->
+*/
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -31,7 +31,7 @@ body {
     padding-left: 20px;
     background-color: #dad5d5;
     text-align: right;
-    font: Script;
+    font-family: 'Brush Script MT', cursive;
 }
 
 .logo {
@@ -54,7 +54,7 @@ body {
 
 label {
     font-weight: bold;
-    font-variant: Arial Black
+    font-family: Arial, sans-serif;
     margin-right: 8px;
 }
 
