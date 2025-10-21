@@ -1,0 +1,129 @@
+<!--
+    Program Name: Style sheet.html
+    Author: Kris Patterson  
+    Date Created: 09-20-2025
+    Date last edited: 09-26-25
+    Version: 1.0
+    Description: Basic User Entry Form
+-->
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #dad5d5;
+    color: #333;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dad5d5;
+    margin-bottom: 20px;
+}
+
+.banner-logo {
+    text-align: center;
+    width: 30%;
+    background-color: #dad5d5;
+}
+
+.banner-text {
+    padding-left: 20px;
+    background-color: #dad5d5;
+    text-align: right;
+    font: Script;
+}
+
+.logo {
+    max-width: 150px;
+    background-color: #dad5d5;
+}
+
+/* Form Table */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #3e5c0887;
+}
+
+.form-table td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+label {
+    font-weight: bold;
+    font-variant: Arial Black
+    margin-right: 8px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 95%;
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Range input */
+input[type="range"] {
+    width: 200px;
+}
+
+/* Checkboxes and Radios */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 4px;
+    margin-left: 10px;
+}
+
+/* Buttons */
+button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reset-btn {
+    background-color: #ccc;
+    color: #000;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.contact-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 2px solid #333;
+    background-color: #dad5d5;
+}
+
+#footer a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: #007bff;
+}
